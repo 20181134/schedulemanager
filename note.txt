@@ -1,5 +1,5 @@
 DB
-Column: (year), (month), day, user, availability
+Column: id, (year), (month), day, user, availability
 
 作成予定:
 addevent.php (予定入力用)

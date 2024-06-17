@@ -11,7 +11,7 @@
             </tr>
             <tr>
             <?php
-            $pdo = new PDO('mysql;host=localhost;dbname=db;charset=utf8', 'admin', 'password');
+            $pdo = new PDO('mysql;host=localhost;dbname=schedule;charset=utf8', 'admin', 'password');
             for (i=1,i<4,i++) {
                 echo '<td></td>';
             }
