@@ -11,23 +11,27 @@
             </tr>
             <tr>
             <?php
-            $pdo = new PDO('mysql;host=localhost;dbname=schedule;charset=utf8', 'admin', 'password');
-            for (i=1,i<4,i++) {
+            $pdo = new PDO('mysql:host=localhost;dbname=schedule;charset=utf8', 'admin', 'admin1234');
+            // カレンダー部分は行きの電車の中で思いついた方法なので調べればもっとスマートなやり方がありそう
+            for ($i=1;$i<5;$i++) {
                 echo '<td></td>';
             }
-            for (i=1,i<32,i++) {
-                $stmt = $pdo->prepare('SELECT * FROM db WHERE day='.i);
-                if ($stmt->execute) {
+            for ($i=1;$i<32;$i++) {
+                $stmt = $pdo->prepare('SELECT * FROM scheduletable WHERE day='.$i);
+                if ($stmt->execute()) {
                     // 日付の数字をリンクにして押したらその日のデータを追加できるようにしたい　formタグで実装できるのかは不明
-                    echo '<form action="./addevent.php" method="post">';
-                    echo '<input type=hidden, value="'.i.'">';
-                    echo '<td><a>'.i.'</a>';
-                    echo '</form>';
+                    // ->get送信でも別に困らないためformは無効化
+                    //echo '<form action="./addevent.php" method="post">';
+                    $j = $i - 1;
+                    //echo '<input type="hidden", value="'.$j.'">';
+                    echo '<td><a href="./addevent.php?day='.$i.'">'.$i.'</a>';
+                    //echo '</form>';
                     foreach ($stmt as $row) {
                         echo '<br>'.$row['user'].': '.$row['availability'];
                     }
+                    echo '</td>';
                 }
-                if ((i+4)%7 == 0) {
+                if (($i+4)%7 == 0) {
                     echo '</tr><tr>';
                 }
             }
