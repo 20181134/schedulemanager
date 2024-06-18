@@ -5,9 +5,16 @@
         <link rel="stylesheet" href="stylesheet.css">
     </head>
     <body>
-        <table border=1 width='300'>
+        <table border=1 width=60%>
             <tr>
             <!-- thで曜日を作成 -->
+                <th>日</th>
+                <th>月</th>
+                <th>火</th>
+                <th>水</th>
+                <th>木</th>
+                <th>金</th>
+                <th>土</th>
             </tr>
             <tr>
             <?php
@@ -37,5 +44,7 @@
             }
             ?>
             </tr>
+        </table>
+        <p>または<a href="./range.php">範囲を指定して追加</a></p>
     </body>
 </html>
