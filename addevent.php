@@ -11,7 +11,7 @@
         echo '<h1>8月'.$day.'日</h1>';
         ?>
         <form action='./output.php' method="post">
-            <p>名前: <input type="text" name="name"></p>
+            <p>名前: <input type="text" name="name" <?php if (isset($_COOKIE['user'])) { echo 'value="'.$_COOKIE['user'].'"'; } ?>></p>
             <input type="hidden" name="day" value="<?php echo $day; ?>">
             <p><input type="radio" name="availability" value="notavailable" checked>不可</p>
             <p><input type="radio" name="availability" value="flexible">変更可(なるべく避ける)</p>

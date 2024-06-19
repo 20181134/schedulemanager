@@ -1,4 +1,5 @@
 <?php
+setcookie('user', $_REQUEST['name'], time()+60*60*24*7);
 $pdo = new PDO('mysql:host=localhost;dbname=schedule;charset=utf8;', 'admin', 'admin1234');
 $stmt = $pdo->prepare('INSERT INTO scheduletable VALUES(:id, :year, :month, :day, :user, :availability)');
 $stmt->bindValue(':id', null);
