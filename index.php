@@ -46,5 +46,6 @@
             </tr>
         </table>
         <p>または<a href="./range.php">範囲を指定して追加</a></p>
+        <p><a href="./delete.php">予定を削除</a></p>
     </body>
 </html>
