@@ -15,7 +15,7 @@
             </select>
             <input type="submit" value="送信">
         </form>
-        <p>または<a href="./deleterange.php">範囲を指定して削除</a></p>
-        <h3 style="color:red;">他人の予定は勝手に消さないでください</h3>
+        <!--<p>または<a href="./deleterange.php">範囲を指定して削除</a></p>-->
+        <h3 style="color:red;">他人の予定は削除禁止</h3>
     </body>
 </html>
