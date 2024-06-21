@@ -6,7 +6,7 @@
     <body>
         <h1>削除</h1>
         <form action="./delete_output.php" method="post">
-            <p>名前: <input type="text" name="user"></p>
+            <p>名前: <input type="text" name="user" <?php if (isset($_COOKIE['user'])) { echo 'value="'.$_COOKIE['user'].'"'; } ?>></p>
             <p>削除する日程: <select name="date"><?php
             for($i=1;$i<=31;$i++) {
                 echo '<option value="'.$i.'">'.$i.'日</option>';

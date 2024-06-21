@@ -6,7 +6,7 @@
     <body>
         <h1>範囲を指定して追加</h1>
         <form action="./range_output.php" method="post">
-            <p>名前: <input type="text" name="user"></p>
+            <p>名前: <input type="text" name="user" <?php if (isset($_COOKIE['user'])) { echo 'value="'.$_COOKIE['user'].'"'; } ?>></p>
             <p><select name="since">
                 <!-- <option value=""></option> -->
                 <?php
